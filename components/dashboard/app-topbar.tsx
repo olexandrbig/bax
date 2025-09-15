@@ -1,0 +1,39 @@
+"use client"
+
+import { Menu, Search, Bell, ChevronsUpDown, Settings } from "lucide-react"
+import { SidebarTrigger } from "@/components/ui/sidebar"
+import {
+  Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb"
+import { Button } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
+
+export function AppTopbar() {
+  return (
+    <header className="sticky top-0 z-0 border-b bg-background">
+      <div className="flex h-14 items-center gap-2 px-2 md:px-4">
+        <div className="flex items-center gap-2">
+          <SidebarTrigger className="md:hidden">
+            <Menu className="size-4" />
+          </SidebarTrigger>
+
+          <Breadcrumb>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink href="#">Dashboard</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink href="#">Projects</BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>Overview</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
+        </div>
+      </div>
+    </header>
+  )
+}
