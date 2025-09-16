@@ -6,9 +6,11 @@ import {
   House,
   LayoutDashboard,
   LifeBuoy,
-  LineChart,
+  Waypoints,
   Settings,
-  Users,
+  Search,
+  Database,
+  ChartNoAxesColumnIcon,
 } from "lucide-react"
 
 import {
@@ -20,12 +22,8 @@ import {
   SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
-  SidebarMenuAction,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
   SidebarRail,
   SidebarSeparator,
 } from "@/components/ui/sidebar"
@@ -50,7 +48,7 @@ export function AppSidebar() {
       <SidebarHeader className="px-2 py-3">
         <div className="flex items-center gap-2">
           <div className="size-8 rounded bg-black dark:bg-white" />
-          <span className="font-semibold truncate">BAX</span>
+          <span className="font-semibold truncate">Tredor Bank Ltd.</span>
         </div>
       </SidebarHeader>
 
@@ -58,12 +56,12 @@ export function AppSidebar() {
 
       <SidebarContent className="overflow-x-hidden">
         <SidebarGroup>
-          <SidebarGroupLabel>Main</SidebarGroupLabel>
+          <SidebarGroupLabel>Home</SidebarGroupLabel>
           <SidebarGroupContent className="min-w-0">
             <SidebarMenu className="min-w-0">
               <SidebarMenuItem className="min-w-0">
                 <SidebarMenuButton asChild isActive className="min-w-0">
-                  <a href="#" className="flex items-center gap-2 min-w-0">
+                  <a href="/app/overview" className="flex items-center gap-2 min-w-0">
                     <LayoutDashboard className="shrink-0" />
                     <span className="truncate">Overview</span>
                   </a>
@@ -72,78 +70,33 @@ export function AppSidebar() {
 
               <SidebarMenuItem className="min-w-0">
                 <SidebarMenuButton asChild className="min-w-0">
-                  <a href="#" className="flex items-center gap-2 min-w-0">
-                    <House className="shrink-0" />
-                    <span className="truncate">Home</span>
+                  <a href="/app/data-control" className="flex items-center gap-2 min-w-0">
+                    <Database className="shrink-0" />
+                    <span className="truncate">Data Control</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
-
-              <SidebarMenuItem className="min-w-0">
-                <SidebarMenuButton className="min-w-0">
-                  <Users className="shrink-0" />
-                  <span className="truncate">Team</span>
-                </SidebarMenuButton>
-                <SidebarMenuAction title="Add" className="shrink-0">
-                  +
-                </SidebarMenuAction>
-                <SidebarMenuSub className="min-w-0">
-                  <SidebarMenuSubItem className="min-w-0">
-                    <SidebarMenuSubButton asChild className="min-w-0">
-                      <a href="#" className="min-w-0">
-                        <span className="truncate">Members</span>
-                      </a>
-                    </SidebarMenuSubButton>
-                  </SidebarMenuSubItem>
-                  <SidebarMenuSubItem className="min-w-0">
-                    <SidebarMenuSubButton asChild className="min-w-0">
-                      <a href="#" className="min-w-0">
-                        <span className="truncate">Invitations</span>
-                      </a>
-                    </SidebarMenuSubButton>
-                  </SidebarMenuSubItem>
-                </SidebarMenuSub>
-              </SidebarMenuItem>
-
               <SidebarMenuItem className="min-w-0">
                 <SidebarMenuButton asChild className="min-w-0">
-                  <a href="#" className="flex items-center gap-2 min-w-0">
-                    <FolderGit2 className="shrink-0" />
-                    <span className="truncate">Repos</span>
-                  </a>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-
-              <SidebarMenuItem className="min-w-0">
-                <SidebarMenuButton asChild className="min-w-0">
-                  <a href="#" className="flex items-center gap-2 min-w-0">
-                    <LineChart className="shrink-0" />
+                  <a href="/app/analytics" className="flex items-center gap-2 min-w-0">
+                    <ChartNoAxesColumnIcon className="shrink-0" />
                     <span className="truncate">Analytics</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
 
-        <SidebarSeparator />
-
-        <SidebarGroup>
-          <SidebarGroupLabel>Support</SidebarGroupLabel>
-          <SidebarGroupContent className="min-w-0">
-            <SidebarMenu className="min-w-0">
               <SidebarMenuItem className="min-w-0">
                 <SidebarMenuButton asChild className="min-w-0">
-                  <a href="#" className="flex items-center gap-2 min-w-0">
-                    <LifeBuoy className="shrink-0" />
-                    <span className="truncate">Help Center</span>
+                  <a href="/app/sources" className="flex items-center gap-2 min-w-0">
+                    <Waypoints className="shrink-0" />
+                    <span className="truncate">Sources</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
 
               <SidebarMenuItem className="min-w-0">
                 <SidebarMenuButton asChild className="min-w-0">
-                  <a href="#" className="flex items-center gap-2 min-w-0">
+                  <a href="/app/settings" className="flex items-center gap-2 min-w-0">
                     <Settings className="shrink-0" />
                     <span className="truncate">Settings</span>
                   </a>
@@ -155,22 +108,21 @@ export function AppSidebar() {
       </SidebarContent>
 
       <SidebarFooter>
-          <SidebarGroupContent className="min-w-0">
+          <SidebarGroupContent className="min-w-0 mb-4">
             <SidebarMenu className="min-w-0">
               <SidebarMenuItem className="min-w-0">
                 <SidebarMenuButton asChild className="min-w-0">
                   <a href="#" className="flex items-center gap-2 min-w-0">
                     <LifeBuoy className="shrink-0" />
-                    <span className="truncate">Help Center</span>
+                    <span className="truncate">Get Help</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
-
               <SidebarMenuItem className="min-w-0">
                 <SidebarMenuButton asChild className="min-w-0">
                   <a href="#" className="flex items-center gap-2 min-w-0">
-                    <Settings className="shrink-0" />
-                    <span className="truncate">Settings</span>
+                    <Search className="shrink-0" />
+                    <span className="truncate">Search</span>
                   </a>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -178,28 +130,27 @@ export function AppSidebar() {
           </SidebarGroupContent>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="h-9 gap-2 px-2">
-              <div className="flex items-start gap-2 min-w-0">
+            <Button variant="ghost" className="h-9 w-full justify-between cursor-pointer pl-0!">
+              <div className="flex min-w-0 flex-1 items-center gap-2 text-left">
                 <Avatar className="size-8 shrink-0">
                   <AvatarImage alt="User" src="/avatar.png" />
-                  <AvatarFallback>OX</AvatarFallback>
+                  <AvatarFallback>US</AvatarFallback>
                 </Avatar>
-                <div className="grid leading-tight min-w-0">
-                  <span className="text-sm font-medium truncate">Olex</span>
-                  <span className="text-xs text-muted-foreground truncate">Admin</span>
+                <div className="min-w-0 leading-tight">
+                  <span className="block text-sm font-medium truncate">Username</span>
+                  <span className="block text-xs text-muted-foreground truncate">Role</span>
                 </div>
               </div>
-              <ChevronsUpDown className="hidden md:inline-block size-4 opacity-60" />
+              <ChevronsUpDown className="hidden md:inline-block size-4 opacity-60 shrink-0" />
             </Button>
+
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" sideOffset={8}>
-            <DropdownMenuLabel>My Account</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Billing</DropdownMenuItem>
-            <DropdownMenuItem>Team</DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>Sign out</DropdownMenuItem>
+            <DropdownMenuItem asChild>
+              <a href="/" className="flex items-center gap-2 min-w-0 cursor-pointer">
+                <span className="truncate">Sign out</span>
+              </a>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </SidebarFooter>

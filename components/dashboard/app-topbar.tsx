@@ -14,7 +14,6 @@ export function AppTopbar() {
           <SidebarTrigger className="md:hidden">
             <Menu className="size-4" />
           </SidebarTrigger>
-
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>

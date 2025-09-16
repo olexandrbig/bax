@@ -1,6 +1,6 @@
 "use client";
 
-export default function Widgets() {
+export default function Overview() {
   return (
     <div className="mx-auto w-full max-w-6xl space-y-6">
 

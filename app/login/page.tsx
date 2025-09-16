@@ -2,19 +2,28 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useRef, useState } from "react";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 export default function LoginPage() {
   const router = useRouter();
+  const [error, setError] = useState<string | null>(null);
+  const errRef = useRef<HTMLDivElement>(null);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // TODO: validate and authenticate
-    router.push("/dashboard");
-  };
+    const fd = new FormData(e.currentTarget);
+    const password = String(fd.get("password") || "");
 
-  const handleGoogleSignIn = () => {
-    // TODO: trigger Google OAuth flow
-    router.push("/dashboard");
+    if (password === "bax123") {
+      setError(null);
+      router.push("/app/overview");
+      return;
+    }
+
+    setError("Invalid password. Please contact administrator to proceed.");
+    // move focus to the error for a11y
+    queueMicrotask(() => errRef.current?.focus());
   };
 
   return (
@@ -38,16 +47,28 @@ export default function LoginPage() {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          {error && (
+            <Alert
+              ref={errRef}
+              tabIndex={-1}
+              variant="destructive"
+              className="outline-none"
+            >
+              <AlertTitle>Authentication failed</AlertTitle>
+              <AlertDescription>{error}</AlertDescription>
+            </Alert>
+          )}
+
+          <form onSubmit={handleSubmit} className="space-y-4" noValidate>
             <div className="space-y-2">
-              <label htmlFor="email" className="text-sm font-medium">
-                Email
+              <label htmlFor="username" className="text-sm font-medium">
+                Username
               </label>
               <input
-                id="email"
-                type="email"
+                id="username"
+                name="username"
+                type="text"
                 required
-                placeholder="you@example.com"
                 className="w-full rounded-md border bg-background px-3 py-2 text-sm outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring"
               />
             </div>
@@ -57,19 +78,22 @@ export default function LoginPage() {
                 <label htmlFor="password" className="text-sm font-medium">
                   Password
                 </label>
-                <Link
-                  href="#"
-                  className="text-xs text-muted-foreground hover:underline"
-                >
-                  Forgot password?
-                </Link>
+                {/*<Link*/}
+                {/*  href="#"*/}
+                {/*  className="text-xs text-muted-foreground hover:underline"*/}
+                {/*>*/}
+                {/*  Forgot password?*/}
+                {/*</Link>*/}
               </div>
               <input
                 id="password"
+                name="password"
                 type="password"
                 required
                 placeholder="••••••••"
-                className="w-full rounded-md border bg-background px-3 py-2 text-sm outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring"
+                aria-invalid={Boolean(error) || undefined}
+                className="w-full rounded-md border bg-background px-3 py-2 text-sm outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring data-[invalid=true]:border-destructive"
+                data-invalid={Boolean(error)}
               />
             </div>
 
@@ -79,22 +103,7 @@ export default function LoginPage() {
             >
               Sign in
             </button>
-
-            <button
-              type="button"
-              onClick={handleGoogleSignIn}
-              className="w-full rounded-md border px-4 py-2 text-sm font-medium hover:bg-muted"
-            >
-              Sign in with Google
-            </button>
           </form>
-
-          <p className="text-center text-sm text-muted-foreground">
-            Don&apos;t have an account?{" "}
-            <Link href="#" className="underline underline-offset-4">
-              Sign up
-            </Link>
-          </p>
         </div>
       </div>
     </main>
