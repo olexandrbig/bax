@@ -1,7 +1,7 @@
 "use client"
 
 import {
-  Blocks, ChevronsUpDown,
+  ChevronsUpDown,
   FolderGit2,
   House,
   LayoutDashboard,

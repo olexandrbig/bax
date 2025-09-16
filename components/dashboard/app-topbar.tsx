@@ -1,12 +1,10 @@
 "use client"
 
-import { Menu, Search, Bell, ChevronsUpDown, Settings } from "lucide-react"
+import { Menu } from "lucide-react"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import {
   Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
 
 export function AppTopbar() {
   return (
