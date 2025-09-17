@@ -2,8 +2,6 @@
 
 import {
   ChevronsUpDown,
-  FolderGit2,
-  House,
   LayoutDashboard,
   LifeBuoy,
   Waypoints,
@@ -33,16 +31,14 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
   DropdownMenu,
   DropdownMenuContent, DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 
 export function AppSidebar() {
   return (
     <Sidebar
-      collapsible="icon"
-      variant="inset"
+      collapsible="offcanvas"
+      variant="sidebar"
       className="z-40 overflow-x-hidden w-[16rem]"
     >
       <SidebarHeader className="px-2 py-3">

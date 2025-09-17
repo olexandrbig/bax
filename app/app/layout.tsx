@@ -9,8 +9,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset
-        className="
-          md:pl-[16rem]
+        className="pt-14
           group-data-[collapsible=icon]/sidebar-wrapper:md:pl-[3rem]
         "
       >

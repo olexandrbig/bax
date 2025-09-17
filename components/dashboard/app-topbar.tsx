@@ -8,10 +8,10 @@ import {
 
 export function AppTopbar() {
   return (
-    <header className="sticky top-0 z-0 border-b bg-background">
+    <header className="fixed top-0 z-0 w-full border-b bg-background">
       <div className="flex h-14 items-center gap-2 px-2 md:px-4">
         <div className="flex items-center gap-2">
-          <SidebarTrigger className="md:hidden">
+          <SidebarTrigger>
             <Menu className="size-4" />
           </SidebarTrigger>
           <Breadcrumb>
