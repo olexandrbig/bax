@@ -1,8 +1,8 @@
 import type { ReactNode } from "react"
 
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
-import { AppSidebar } from "@/components/dashboard/app-sidebar"
-import { AppTopbar } from "@/components/dashboard/app-topbar"
+import { AppSidebar } from "@/components/app/app-sidebar"
+import { AppTopbar } from "@/components/app/app-topbar"
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (

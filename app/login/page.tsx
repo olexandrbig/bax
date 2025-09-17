@@ -22,7 +22,7 @@ export default function LoginPage() {
     }
 
     setError("Invalid password. Please contact administrator to proceed.");
-    // move focus to the error for a11y
+
     queueMicrotask(() => errRef.current?.focus());
   };
 

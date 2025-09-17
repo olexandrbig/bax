@@ -1,0 +1,8 @@
+[
+  { "name": "LoanIQ", "status": "yellow", "LastIssue": "01-09-2025 17:30", "IssueDescription": "Authorization issue solved" },
+  { "name": "Flat File Instruments", "status": "green", "LastIssue": "01-01-2024 00:00", "IssueDescription": "No issues" },
+  { "name": "Flat File PartyMaster", "status": "green", "LastIssue": "01-01-2024 00:00", "IssueDescription": "No issues" },
+  { "name": "T24", "status": "green", "LastIssue": "01-01-2024 00:00", "IssueDescription": "No issues" },
+  { "name": "Libor - Bloomberg", "status": "green", "LastIssue": "01-01-2024 00:00", "IssueDescription": "No issues" },
+  { "name": "Exchange Rates", "status": "yellow", "LastIssue": "10-09-2025 09:15", "IssueDescription": "Rate feed delay resolved" }
+]

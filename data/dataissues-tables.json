@@ -1,0 +1,6 @@
+[
+  { "Table": "BIRD_PRTY_IL", "Importance": "High", "Layer": "IL", "Issues": 79, "Trend": "UP", "Solved24": 3, "Created24": 7 },
+  { "Table": "BIRD_ENTTY_RL_IL", "Importance": "High", "Layer": "IL", "Issues": 14, "Trend": "UP", "Solved24": 5, "Created24": 1 },
+  { "Table": "INSTRUMENTS", "Importance": "Medium", "Layer": "IL", "Issues": 48, "Trend": "DOWN", "Solved24": 5, "Created24": 3 },
+  { "Table": "GEOGRAPHIES", "Importance": "Low", "Layer": "IL", "Issues": 14, "Trend": "STABLE", "Solved24": 5, "Created24": 2 }
+]

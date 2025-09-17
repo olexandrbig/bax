@@ -33,8 +33,15 @@ import {
   DropdownMenuContent, DropdownMenuItem,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import type {Route} from "next";
 
 export function AppSidebar() {
+  const pathname = usePathname();
+  const isActive = (href:string) =>{
+    return pathname === href || pathname.startsWith(href + "/")
+  };
   return (
     <Sidebar
       collapsible="offcanvas"
@@ -56,46 +63,46 @@ export function AppSidebar() {
           <SidebarGroupContent className="min-w-0">
             <SidebarMenu className="min-w-0">
               <SidebarMenuItem className="min-w-0">
-                <SidebarMenuButton asChild isActive className="min-w-0">
-                  <a href="/app/overview" className="flex items-center gap-2 min-w-0">
+                <SidebarMenuButton asChild isActive={isActive("/app/overview")} className="min-w-0">
+                  <Link href="/app/overview" className="flex items-center gap-2 min-w-0">
                     <LayoutDashboard className="shrink-0" />
                     <span className="truncate">Overview</span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
 
               <SidebarMenuItem className="min-w-0">
-                <SidebarMenuButton asChild className="min-w-0">
-                  <a href="/app/data-control" className="flex items-center gap-2 min-w-0">
+                <SidebarMenuButton asChild isActive={isActive("/app/data-control")} className="min-w-0">
+                  <Link href="/app/data-control" className="flex items-center gap-2 min-w-0">
                     <Database className="shrink-0" />
                     <span className="truncate">Data Control</span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem className="min-w-0">
-                <SidebarMenuButton asChild className="min-w-0">
-                  <a href="/app/analytics" className="flex items-center gap-2 min-w-0">
+                <SidebarMenuButton asChild isActive={isActive("/app/analytics")} className="min-w-0">
+                  <Link href="/app/analytics" className="flex items-center gap-2 min-w-0">
                     <ChartNoAxesColumnIcon className="shrink-0" />
                     <span className="truncate">Analytics</span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
 
               <SidebarMenuItem className="min-w-0">
-                <SidebarMenuButton asChild className="min-w-0">
-                  <a href="/app/sources" className="flex items-center gap-2 min-w-0">
+                <SidebarMenuButton asChild isActive={isActive("/app/sources")} className="min-w-0">
+                  <Link href="/app/sources" className="flex items-center gap-2 min-w-0">
                     <Waypoints className="shrink-0" />
                     <span className="truncate">Sources</span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
 
               <SidebarMenuItem className="min-w-0">
-                <SidebarMenuButton asChild className="min-w-0">
-                  <a href="/app/settings" className="flex items-center gap-2 min-w-0">
+                <SidebarMenuButton asChild isActive={isActive("/app/settings")} className="min-w-0">
+                  <Link href="/app/settings" className="flex items-center gap-2 min-w-0">
                     <Settings className="shrink-0" />
                     <span className="truncate">Settings</span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
@@ -107,19 +114,19 @@ export function AppSidebar() {
           <SidebarGroupContent className="min-w-0 mb-4">
             <SidebarMenu className="min-w-0">
               <SidebarMenuItem className="min-w-0">
-                <SidebarMenuButton asChild className="min-w-0">
-                  <a href="#" className="flex items-center gap-2 min-w-0">
+                <SidebarMenuButton asChild isActive={isActive("/app/help")} className="min-w-0">
+                  <Link href={'/app/help' as Route} className="flex items-center gap-2 min-w-0">
                     <LifeBuoy className="shrink-0" />
                     <span className="truncate">Get Help</span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem className="min-w-0">
-                <SidebarMenuButton asChild className="min-w-0">
-                  <a href="#" className="flex items-center gap-2 min-w-0">
+                <SidebarMenuButton asChild isActive={isActive("/app/search")} className="min-w-0">
+                  <Link href={'/app/search' as Route} className="flex items-center gap-2 min-w-0">
                     <Search className="shrink-0" />
                     <span className="truncate">Search</span>
-                  </a>
+                  </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
             </SidebarMenu>
@@ -143,9 +150,9 @@ export function AppSidebar() {
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" sideOffset={8}>
             <DropdownMenuItem asChild>
-              <a href="/" className="flex items-center gap-2 min-w-0 cursor-pointer">
+              <Link href="/" className="flex items-center gap-2 min-w-0 cursor-pointer">
                 <span className="truncate">Sign out</span>
-              </a>
+              </Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
