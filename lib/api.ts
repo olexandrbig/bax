@@ -50,9 +50,10 @@ export async function getDataIssuesTables(): Promise<DataIssuesTable[]> {
   try { return await api<DataIssuesTable[]>("/api/dataissues/tables"); }
   catch { return tablesJson as DataIssuesTable[]; }
 }
-export async function getDataIssuesInstruments(): Promise<InstrumentIssuePoint[]> {
-  try { return await api<InstrumentIssuePoint[]>("/api/dataissues/instruments"); }
-  catch { return instrumentsJson as InstrumentIssuePoint[]; }
+export async function getDataIssuesInstruments(tableName: string): Promise<InstrumentIssuePoint[]> {
+  try { return await api<InstrumentIssuePoint[]>(`/api/dataissues/instruments?table=${tableName}`); }
+  catch { // @ts-ignore
+    return instrumentsJson[tableName] as InstrumentIssuePoint[]; }
 }
 export async function getAnalyticsReports(): Promise<AnalyticsReport[]> {
   try { return await api<AnalyticsReport[]>("/api/analytics/reports"); }

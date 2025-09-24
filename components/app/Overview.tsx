@@ -1,17 +1,62 @@
+"use client";
+
+import { useEffect, useState, useCallback } from "react";
 import {
   getSourcesStatus,
   getDataIssuesTables,
   getDataIssuesInstruments,
 } from "@/lib/api";
-import {InstrumentsLineChart} from "@/components/charts/instruments-line";
+import { InstrumentsLineChart } from "@/components/charts/instruments-line";
 import { TrendCell } from "@/components/app/trend-cell";
 
-export default async function Overview() {
-  const [sources, tables, instruments] = await Promise.all([
-    getSourcesStatus(),
-    getDataIssuesTables(),
-    getDataIssuesInstruments()
-  ]);
+type Source = { name: string; status: "green" | "yellow" | "red" };
+type TableRow = {
+  Table: string;
+  Importance: string;
+  Layer: string;
+  Issues: number;
+  Trend: "UP" | "DOWN" | "STABLE";
+  Solved24: number;
+  Created24: number;
+};
+type SeriesPoint = { date: string; value: number };
+
+export default function Overview() {
+  const [sources, setSources] = useState<Source[]>([]);
+  const [tables, setTables] = useState<TableRow[]>([]);
+  const [selectedTable, setSelectedTable] = useState<string>("");
+  const [series, setSeries] = useState<SeriesPoint[]>([]);
+  const [loadingChart, setLoadingChart] = useState<boolean>(false);
+
+  useEffect(() => {
+    let mounted = true;
+    (async () => {
+      const [s, t, i] = await Promise.all([
+        getSourcesStatus(),
+        getDataIssuesTables(),
+        getDataIssuesInstruments(''),
+      ]);
+      if (!mounted) return;
+      setSources(s as Source[]);
+      setTables(t as TableRow[]);
+      setSeries(i);
+      setSelectedTable(t?.[0]?.Table ?? "");
+    })();
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  const loadChart = useCallback(async (table: string) => {
+    setLoadingChart(true);
+    setSelectedTable(table);
+    try {
+      const data = await getDataIssuesInstruments(table);
+      setSeries(data as SeriesPoint[]);
+    } finally {
+      setLoadingChart(false);
+    }
+  }, []);
 
   return (
     <div className="mx-auto w-full space-y-6">
@@ -41,7 +86,26 @@ export default async function Overview() {
       </section>
 
       <section>
-        <InstrumentsLineChart data={instruments} />
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="text-xl font-semibold">Instruments</h2>
+          <div className="text-sm text-muted-foreground">
+            {selectedTable ? (
+              <>
+                Data issues trend for <span className="font-medium">{selectedTable}</span>
+              </>
+            ) : (
+              "Select a table below to filter the chart"
+            )}
+          </div>
+        </div>
+
+        <div className="rounded-md border p-3">
+          {loadingChart ? (
+            <div className="h-[280px] animate-pulse rounded-md bg-muted/50" />
+          ) : (
+            <InstrumentsLineChart data={series} />
+          )}
+        </div>
       </section>
 
       <section>
@@ -60,19 +124,46 @@ export default async function Overview() {
             </tr>
             </thead>
             <tbody className="divide-y">
-            {tables.map((t) => (
-              <tr key={t.Table} className="[&>td]:px-3 [&>td]:py-2">
-                <td className="font-medium">{t.Table}</td>
-                <td>{t.Importance}</td>
-                <td>{t.Layer}</td>
-                <td>{t.Issues}</td>
-                <td><TrendCell trend={t.Trend} /></td>
-                <td>{t.Solved24}</td>
-                <td>{t.Created24}</td>
-              </tr>
-            ))}
+            {tables.map((t) => {
+              const active = t.Table === selectedTable;
+              return (
+                <tr
+                  key={t.Table}
+                  onClick={() => loadChart(t.Table)}
+                  className={[
+                    "[&>td]:px-3 [&>td]:py-2 cursor-pointer",
+                    active && "bg-muted/40",
+                    "hover:bg-muted/30",
+                  ]
+                    .filter(Boolean)
+                    .join(" ")}
+                  role="button"
+                  aria-pressed={active}
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") loadChart(t.Table);
+                  }}
+                >
+                  <td className="font-medium">
+                    <span className="underline-offset-2 hover:underline">{t.Table}</span>
+                  </td>
+                  <td>{t.Importance}</td>
+                  <td>{t.Layer}</td>
+                  <td>{t.Issues}</td>
+                  <td>
+                    <TrendCell trend={t.Trend} />
+                  </td>
+                  <td>{t.Solved24}</td>
+                  <td>{t.Created24}</td>
+                </tr>
+              );
+            })}
             </tbody>
           </table>
+        </div>
+
+        <div className="mt-2 text-xs text-muted-foreground">
+          Tip: Click a row to reload the chart with that table&apos;s trend.
         </div>
       </section>
     </div>

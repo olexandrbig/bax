@@ -28,17 +28,18 @@ export default function LoginPage() {
 
   return (
     <main className="min-h-screen grid lg:grid-cols-2">
-      <div className="hidden lg:block border-r bg-muted/30">
+      <div className="hidden lg:block border-r bg-muted/30 bg-[url(/hero-login.png)] bg-cover mt-[-70px]">
         <div className="h-full w-full flex items-center justify-center p-8">
-          <AuthPreview />
         </div>
       </div>
 
       <div className="flex items-center justify-center p-6">
         <div className="mx-auto w-full max-w-sm space-y-6">
           <div className="flex items-center gap-2">
-            <div className="size-8 rounded bg-black dark:bg-white" />
-            <span className="font-semibold">bax</span>
+            <img
+              src="/logo.png"
+              alt="BAX Consulting"
+            />
           </div>
           <div className="space-y-1">
             <h1 className="text-2xl font-semibold tracking-tight">Welcome back</h1>
@@ -107,21 +108,5 @@ export default function LoginPage() {
         </div>
       </div>
     </main>
-  );
-}
-
-function AuthPreview() {
-  return (
-    <div className="w-full max-w-md space-y-4">
-      <div className="aspect-video w-full rounded-xl border bg-background" />
-      <div className="grid grid-cols-3 gap-3">
-        <div className="h-16 rounded-lg border bg-background" />
-        <div className="h-16 rounded-lg border bg-background" />
-        <div className="h-16 rounded-lg border bg-background" />
-      </div>
-      <p className="text-sm text-muted-foreground">
-        A modern dashboard to manage your data with ease.
-      </p>
-    </div>
   );
 }

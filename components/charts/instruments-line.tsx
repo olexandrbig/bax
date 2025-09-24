@@ -52,7 +52,7 @@ export function InstrumentsLineChart({ data }: { data: InstrumentIssuePoint[] })
   return (
     <Card>
       <CardHeader className="pb-2">
-        <CardTitle className="text-xl font-semibold mb-3">Instruments</CardTitle>
+        <CardTitle className="text-xl font-semibold mb-3"></CardTitle>
       </CardHeader>
       <CardContent className="h-64">
         <ResponsiveContainer width="100%" height="100%">

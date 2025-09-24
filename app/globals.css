@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+    --font-montserrat: 'Montserrat', 'Montserrat Fallback', sans-serif;
+}
+:root { font-family: var(--font-montserrat), ui-sans-serif, system-ui; }
+
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
