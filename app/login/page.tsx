@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -36,7 +36,8 @@ export default function LoginPage() {
       <div className="flex items-center justify-center p-6">
         <div className="mx-auto w-full max-w-sm space-y-6">
           <div className="flex items-center gap-2">
-            <img
+            <Image
+              width={80} height={27}
               src="/logo.png"
               alt="BAX Consulting"
             />
