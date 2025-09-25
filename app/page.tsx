@@ -6,26 +6,26 @@ export default function LandingPage() {
   return (
     <main className="min-h-dvh flex flex-col">
       <header className="sticky top-0 z-10 bg-center bg-black/40 bg-blend-multiply">
-        <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between gap-6">
-          <div className="flex items-center gap-8">
+        <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-6">
             <Link href="/" className="flex items-center gap-3">
               <img
                 src="/logo-dark.png"
                 alt="BAX Consulting"
               />
             </Link>
-            <nav className="hidden md:flex items-center gap-8">
-              <Link href="#solutions" className="rounded-md px-3 py-2 text-sm text-(--color-sidebar-primary-foreground)">Solutions</Link>
-              <Link href="#services" className="rounded-md px-3 py-2 text-sm text-(--color-sidebar-primary-foreground)">Services</Link>
-              <Link href="#insights" className="rounded-md px-3 py-2 text-sm text-(--color-sidebar-primary-foreground)">Insights</Link>
+            <nav className="hidden md:flex items-center gap-6">
+              <Link href="#solutions" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Solutions</Link>
+              <Link href="#services" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Services</Link>
+              <Link href="#insights" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Insights</Link>
             </nav>
           </div>
-          <div className="flex items-center gap-3">
-            <a href="mailto:info@bax.com" className="hidden sm:inline text-sm text-(--color-sidebar-primary-foreground)">info@bax.com</a>
-            <a href="tel:+359000000000" className="hidden sm:inline text-sm text-(--color-sidebar-primary-foreground)">+359 000 000 000</a>
+          <div className="flex items-center gap-6">
+            <a href="mailto:info@bax.com" className="hidden sm:inline text-sm text-(--color-7)">info@bax.com</a>
+            <a href="tel:+359000000000" className="hidden sm:inline text-sm text-(--color-7)">+359 000 000 000</a>
             <Link
               href="#contact"
-              className="rounded-md px-4 py-2 text-sm font-medium bg-primary text-primary-foreground hover:opacity-90"
+              className="rounded-sm px-6 py-1 text-base font-semibold bg-(--color-4) text-(--color-7) hover:opacity-90"
             >
               Contact Us
             </Link>
@@ -36,15 +36,15 @@ export default function LandingPage() {
       <section className="flex-1 flex min-h-[calc(100vh+10px)] justify-center items-center bg-[url(/hero.png)] bg-black/20 bg-blend-multiply bg-cover mt-[-70px]">
         <div className="">
           <div className="w-1/1 space-y-6 text-center">
-            <h1 className="text-4xl/tight sm:text-5xl/tight text-bold text-(--color-sidebar-primary-foreground)">
+            <h1 className="text-4xl/tight sm:text-5xl/tight font-semibold text-(--color-7)">
               BAX Consulting
             </h1>
-            <p className="text-(--color-sidebar-primary-foreground) text-lg mb-12">
+            <p className="text-(--color-7) text-2xl/tight mb-12">
               Software and Consulting for BIRD and IReF
             </p>
             <Link
               href="/login"
-              className="rounded-md px-5 py-3 text-sm font-medium bg-primary text-primary-foreground hover:opacity-90"
+              className="rounded-sm px-7 py-4 text-base font-semibold bg-transparent border border-(--color-7) text-(--color-7) hover:opacity-90"
             >
               Learn More
             </Link>
@@ -52,8 +52,8 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section id="platform" className="bg-muted/30 pt-20">
-        <h2 className="text-3xl font-semibold text-center">BAX Platform</h2>
+      <section id="platform" className="bg-(--color-8) pt-20">
+        <h2 className="text-3xl font-semibold text-center text-(--color-4)">BAX Platform</h2>
         <div className="mx-auto max-w-7xl px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
           <div className="order-1">
             <img
@@ -166,16 +166,16 @@ export default function LandingPage() {
                 />
               </Link>
               <nav className="flex items-center gap-8">
-                <Link href="#solutions" className="rounded-md px-3 py-2 text-sm text-(--color-sidebar-primary-foreground)">Solutions</Link>
-                <Link href="#services" className="rounded-md px-3 py-2 text-sm text-(--color-sidebar-primary-foreground)">Services</Link>
-                <Link href="#insights" className="rounded-md px-3 py-2 text-sm text-(--color-sidebar-primary-foreground)">Insights</Link>
-                <Link href="#insights" className="rounded-md px-3 py-2 text-sm text-(--color-sidebar-primary-foreground)">Privacy & Terms</Link>
-                <Link href="#insights" className="rounded-md px-3 py-2 text-sm text-(--color-sidebar-primary-foreground)">Impressum</Link>
+                <Link href="#solutions" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Solutions</Link>
+                <Link href="#services" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Services</Link>
+                <Link href="#insights" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Insights</Link>
+                <Link href="#insights" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Privacy & Terms</Link>
+                <Link href="#insights" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Impressum</Link>
               </nav>
             </div>
             <div className="flex items-center gap-3">
-              <a href="mailto:info@bax.com" className="inline text-sm text-(--color-sidebar-primary-foreground)">info@bax.com</a>
-              <a href="tel:+359000000000" className="inline text-sm text-(--color-sidebar-primary-foreground)">+359 000 000 000</a>
+              <a href="mailto:info@bax.com" className="inline text-sm text-(--color-7)">info@bax.com</a>
+              <a href="tel:+359000000000" className="inline text-sm text-(--color-7)">+359 000 000 000</a>
               <Link
                 href="#contact"
                 className="rounded-md px-4 py-2 text-sm font-medium bg-primary text-primary-foreground hover:opacity-90"
@@ -185,7 +185,7 @@ export default function LandingPage() {
             </div>
           </div>
         </header>
-        <div className="mx-auto max-w-7xl px-6 text-sm text-(--color-sidebar-primary-foreground)">
+        <div className="mx-auto max-w-7xl px-6 text-sm text-(--color-7)">
           © {new Date().getFullYear()} BAX Consulting.
           <div className="text-sm">
             Bulgaria, Sofia 1750, Mladost 1, 40 Boulevard &quot;Tsarigradsko shose&quot;

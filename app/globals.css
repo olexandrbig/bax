@@ -2,6 +2,15 @@
 
 @theme {
     --font-montserrat: 'Montserrat', 'Montserrat Fallback', sans-serif;
+    --color-1: #2E2D2D;
+    --color-2: #888888;
+    --color-3: #012733;
+    --color-4: #005774;
+    --color-5: #80D6F2;
+    --color-6: #F3F3F3;
+    --color-7: #FFFFFF;
+    --color-8: #EAF4FB;
+
 }
 :root { font-family: var(--font-montserrat), ui-sans-serif, system-ui; }
 
