@@ -17,7 +17,7 @@ type Report = {
   type?: string;
   version?: string | number;
   labels?: string[];
-  displayIndicator?: string; // 'AsFavourite' or other
+  displayIndicator?: string;
 };
 
 const LS_KEY = "analytics.favorites:v1";
