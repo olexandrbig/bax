@@ -18,7 +18,7 @@ export function Landing({ posts = [] }: { posts: Post[] }) {
           <div className="w-1/1 space-y-6 text-center">
             <h1 className="text-4xl/tight sm:text-5xl/tight font-semibold text-(--color-7)">BAX Consulting</h1>
             <p className="text-(--color-7) text-2xl/tight mb-12">
-              Software and Consulting for BIRD and IReF
+              Streamlining regulatory reporting with BIRD and IReF
             </p>
             <Link
               href="/#solutions"
