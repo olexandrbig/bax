@@ -1,6 +1,9 @@
 import { getAllSlugs, getPostBySlug } from "@/lib/posts";
 import type { Metadata } from "next";
 import { marked } from "marked";
+import {Navbar} from "@/components/site/navbar";
+import {Footer} from "@/components/site/footer";
+import { RichArticle } from "@/components/site/rich-article";
 
 export const dynamic = "error";
 export const revalidate = false;
@@ -19,7 +22,7 @@ export async function generateMetadata({
   const post = await getPostBySlug(slug);
   return {
     title: post?.title ?? "Post",
-    description: post?.description,
+    description: post?.description
   };
 }
 
@@ -33,8 +36,12 @@ export default async function PostPage({
 
   if (!post) {
     return (
-      <main className="mx-auto max-w-3xl px-6 py-16">
-        <h1 className="text-2xl font-semibold">Not found</h1>
+      <main className="min-h-dvh flex flex-col">
+        <Navbar />
+        <section className="pt-20 min-h-[calc(100vh-245px)] mx-auto max-w-3xl px-6 py-16">
+          <h1 className="text-2xl font-semibold">Not found</h1>
+        </section>
+        <Footer />
       </main>
     );
   }
@@ -42,10 +49,14 @@ export default async function PostPage({
   const html = marked.parse(post.content) as string;
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-16 prose prose-invert">
-      <p className="text-sm text-muted-foreground">{post.publishedFormatted}</p>
-      <h1 className="!mb-4">{post.title}</h1>
-      <article dangerouslySetInnerHTML={{ __html: html }} />
+    <main className="min-h-dvh flex flex-col ">
+      <Navbar />
+      <section className="min-h-[calc(100vh-245px)] bg-(--color-7) px-6 py-16 ">
+        <div className="mx-auto max-w-3xl prose">
+          <RichArticle html={html} />
+        </div>
+      </section>
+      <Footer />
     </main>
   );
 }

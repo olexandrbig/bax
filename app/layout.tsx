@@ -21,7 +21,7 @@ export default function RootLayout({
     <head>
       <link rel="preconnect" href="https://fonts.mailerlite.com" crossOrigin=""/>
     </head>
-    <body className={`min-h-screen bg-background text-foreground antialiased ${montserrat.variable}`} suppressHydrationWarning>
+    <body className={`min-h-screen bg-(--color-4) text-foreground antialiased ${montserrat.variable}`} suppressHydrationWarning>
       <ThemeProvider
         attribute="class"
         defaultTheme="system"

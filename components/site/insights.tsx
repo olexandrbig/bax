@@ -13,9 +13,9 @@ export type Post = {
 export function Insights({ posts = [] }: { posts: Post[] }) {
 
   return (
-    <main className="min-h-dvh flex flex-col">
-      <section id="insights" className="pt-20 bg-(--color-7)">
-        <h2 className="text-3xl font-semibold text-center text-(--color-1)"><span className="text-(--color-4)">BAX Consulting</span> Insights </h2>
+    <main className="flex flex-col">
+      <section id="insights" className="pt-20 min-h-[calc(100vh-245px)] bg-(--color-7)">
+        <h1 className="text-3xl font-semibold text-center text-(--color-1)"><span className="text-(--color-4)">BAX Consulting</span> Insights </h1>
         <div className="mx-auto max-w-7xl px-6 pb-30 py-12 grid gap-10 items-center">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {posts.map((post, postIndex) => {
@@ -47,17 +47,5 @@ export function Insights({ posts = [] }: { posts: Post[] }) {
         </div>
       </section>
     </main>
-  );
-}
-
-function ServiceCard({ title, description, index }: { title: string; description: string; index: number }) {
-  return (
-    <div className="rounded-sm border hover:border-(--color-6) p-5 flex flex-col hover:shadow-[0_0_20px_color-mix(in_srgb,var(--color-1)_10%,transparent)]">
-      <div className="text-right">
-        <Image width={80} height={80} src={`/service-${index + 1}.png`} alt="" className="w-20 mb-4 float-right inline-block" />
-      </div>
-      <h3 className="text-(--color-1) text-2xl font-semibold">{title}</h3>
-      <p className="mt-2 text-sm text-(--color-1)">{description}</p>
-    </div>
   );
 }
