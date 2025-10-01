@@ -10,7 +10,7 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-3">
               <Image width={80} height={27} src="/logo-dark.png" alt="BAX Consulting" />
             </Link>
-            <nav className="flex items-center gap-6">
+            <nav className="hidden items-center gap-6 sm:flex">
               <Link href="/#solutions" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Solutions</Link>
               <Link href="/#services" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Services</Link>
               <Link href="/insights" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Insights</Link>
@@ -19,8 +19,8 @@ export function Footer() {
             </nav>
           </div>
           <div className="flex items-center gap-6">
-            <a href="mailto:info@bax.com" className="inline text-sm text-(--color-7)">info@bax.com</a>
-            <a href="tel:+359000000000" className="inline text-sm text-(--color-7)">+359 000 000 000</a>
+            <a href="mailto:info@bax.com" className="hidden sm:inline text-sm text-(--color-7)">info@bax.com</a>
+            <a href="tel:+359000000000" className="hidden sm:inline text-sm text-(--color-7)">+359 000 000 000</a>
             <Link
               href="/#contact"
               className="rounded-sm px-6 py-1 text-base font-semibold bg-(--color-4) text-(--color-7) hover:opacity-90"
