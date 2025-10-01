@@ -33,7 +33,7 @@ export default function LoginPage() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center p-6">
+      <div className="flex items-center justify-center p-6 bg-background">
         <div className="mx-auto w-full max-w-sm space-y-6">
           <div className="flex items-center gap-2">
             <Image
