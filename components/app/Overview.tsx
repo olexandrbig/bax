@@ -62,7 +62,7 @@ export default function Overview() {
     <div className="mx-auto w-full space-y-6">
       <section>
         <h2 className="text-xl font-semibold mb-3">Sources</h2>
-        <ul className="divide-y rounded-md border grid grid-cols-3">
+        <ul className="divide-y rounded-md border grid grid-cols-2 sm:grid-cols-3">
           {sources.map((s) => (
             <li key={s.name} className="flex items-start p-3 gap-4">
               <span
@@ -88,7 +88,7 @@ export default function Overview() {
       <section>
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-xl font-semibold">Instruments</h2>
-          <div className="text-sm text-muted-foreground">
+          <div className="text-sm text-muted-foreground text-right">
             {selectedTable ? (
               <>
                 Data issues trend for <span className="font-medium">{selectedTable}</span>
