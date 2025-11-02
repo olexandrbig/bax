@@ -18,7 +18,7 @@ export function Landing({ posts = [] }: { posts: Post[] }) {
           <div className="w-1/1 space-y-6 text-center">
             <h1 className="text-4xl/tight sm:text-5xl/tight font-semibold text-(--color-7)">BIRD & IReF</h1>
             <p className="text-(--color-7) text-2xl/tight mb-12">
-              Consulting and implementation experts
+              Consulting and Implementation services
             </p>
             <Link
               href="/#solutions"
@@ -68,7 +68,7 @@ export function Landing({ posts = [] }: { posts: Post[] }) {
           </div>
           <div className="order-2 space-y-5">
             <p className="text-(--color-1) text-2xl">
-              The BAX Platform is your End-to-end solution for prudential, statistical, granular, European and local
+              The BAX Platform is your End-to-End solution for prudential, statistical, granular, European and local
               reporting.
             </p>
             <p className="text-(--color-1) text-2xl">
@@ -118,13 +118,13 @@ export function Landing({ posts = [] }: { posts: Post[] }) {
 
       <section className="bg-(--color-7) pt-20">
         <h2 className="text-3xl font-semibold text-center text-(--color-1)">
-          <span className="text-(--color-4)">BIRD and IReF</span> reporting advisory
+          <span className="text-(--color-4)">BIRD and IReF</span> consulting
         </h2>
 
         <div className="mx-auto max-w-5xl px-6 py-14 space-y-6">
           <p className="text-(--color-1)">
             We specialize in BIRD and IReF consulting, offering expert guidance and hands-on implementation support.
-            With deep experience in regulatory reporting frameworks like CoREP, FinRep, and AnaCredit, we help financial institutions streamline compliance.
+            With deep experience in regulatory reporting frameworks like CoREP, FinRep, and AnaCredit, we help financial institutions optimize their regulatory reporting processes.
             Our expertise in data modeling and BIRD/IReF transformation rules ensures accurate, efficient, and fully compliant reporting solutions.
           </p>
 

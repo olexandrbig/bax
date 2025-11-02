@@ -32,7 +32,7 @@ export function Footer() {
       </header>
       <div className="mx-auto max-w-7xl px-6 text-sm text-(--color-6)">
         © {new Date().getFullYear()} BAX Consulting
-        <div className="text-sm">Grosse Gallussstrasse 16-18, 60312 Frankfurt am Main 60312, Germany</div>
+        <div className="text-sm">Grosse Gallussstrasse 16-18, 60312 Frankfurt am Main, Germany</div>
         <div className="text-sm">All rights reserved. Secured by SSL.</div>
       </div>
     </footer>
