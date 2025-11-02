@@ -35,7 +35,7 @@ export function Navbar() {
           <nav className="hidden md:flex items-center gap-6">
             <Link href="/#services" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Services</Link>
             <Link href="/#solutions" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Solutions</Link>
-            <Link href="/insights" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Insights</Link>
+            {/*<Link href="/insights" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Insights</Link>*/}
           </nav>
         </div>
         <div className="flex items-center gap-6">

@@ -13,7 +13,7 @@ export function Footer() {
             <nav className="hidden items-center gap-6 sm:flex">
               <Link href="/#solutions" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Solutions</Link>
               <Link href="/#services" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Services</Link>
-              <Link href="/insights" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Insights</Link>
+              {/*<Link href="/insights" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Insights</Link>*/}
               <Link href="/terms" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Privacy & Terms</Link>
               <Link href="/impressum" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Impressum</Link>
             </nav>
