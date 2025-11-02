@@ -10,8 +10,8 @@ export function ContactUs({
                             id = "contact",
                             src = "/ContactUs.html",
                             width = 450,
-                            height = 560,
-                            className = "w-[450px] h-[560px] max-w-full inline-block",
+                            height = 620,
+                            className = "w-[450px] h-[620px] max-w-full inline-block",
                           }: ContactUsProps) {
   return (
     <section id={id} className="bg-(--color-6) pt-20">
