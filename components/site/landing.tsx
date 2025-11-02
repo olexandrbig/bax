@@ -21,7 +21,7 @@ export function Landing({ posts = [] }: { posts: Post[] }) {
               Consulting and Implementation services
             </p>
             <Link
-              href="/#solutions"
+              href="/#services"
               className="rounded-sm px-7 py-4 text-base font-semibold bg-transparent border border-(--color-7) text-(--color-7) hover:opacity-90"
             >
               Learn More
