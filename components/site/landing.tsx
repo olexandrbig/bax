@@ -125,7 +125,7 @@ export function Landing({ posts = [] }: { posts: Post[] }) {
           <p className="text-(--color-1)">
             We specialize in BIRD and IReF consulting, offering expert guidance and hands-on implementation support.
             With deep experience in regulatory reporting frameworks like CoREP, FinRep, and AnaCredit, we help financial institutions optimize their regulatory reporting processes.
-            Our expertise in data modeling and BIRD/IReF transformation rules ensures accurate, efficient, and fully compliant reporting solutions.
+            Our expertise in BIRD data engineering and our earlier experience with IReF implementation ensures accurate, efficient, and fully compliant reporting solutions.
           </p>
 
           {/*<details className="group">*/}
