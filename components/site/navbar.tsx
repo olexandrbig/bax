@@ -33,8 +33,8 @@ export function Navbar() {
             <Image width={80} height={27} src="/logo-dark.png" alt="BAX Consulting" />
           </Link>
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="/#solutions" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Solutions</Link>
             <Link href="/#services" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Services</Link>
+            <Link href="/#solutions" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Solutions</Link>
             <Link href="/insights" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Insights</Link>
           </nav>
         </div>

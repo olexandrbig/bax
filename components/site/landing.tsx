@@ -16,9 +16,9 @@ export function Landing({ posts = [] }: { posts: Post[] }) {
       <section className="flex-1 flex min-h-[calc(100vh+10px)] justify-center items-center bg-[url(/hero.png)] bg-black/20 bg-blend-multiply bg-cover mt-[-70px]">
         <div>
           <div className="w-1/1 space-y-6 text-center">
-            <h1 className="text-4xl/tight sm:text-5xl/tight font-semibold text-(--color-7)">BAX Consulting</h1>
+            <h1 className="text-4xl/tight sm:text-5xl/tight font-semibold text-(--color-7)">BIRD & IReF</h1>
             <p className="text-(--color-7) text-2xl/tight mb-12">
-              Streamlining regulatory reporting with BIRD and IReF
+              Consulting and implementation experts
             </p>
             <Link
               href="/#solutions"
@@ -26,6 +26,36 @@ export function Landing({ posts = [] }: { posts: Post[] }) {
             >
               Learn More
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="pt-20 bg-(--color-7)">
+        <h2 className="text-3xl font-semibold text-center text-(--color-1)">
+          <span className="text-(--color-4)">BAX Consulting</span> Services
+        </h2>
+        <div className="mx-auto max-w-7xl px-6 pt-8 pb-16">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <ServiceCard
+                title="BIRD Advisory"
+                index={2}
+                description="As BIRD experts, we help you implement all aspects of BIRD from data engineering, layer creation to transformation rules and model consultation."
+            />
+            <ServiceCard
+                title="IReF Advisory"
+                index={3}
+                description="We constantly monitor and analyze the latest updates to the IReF standard and help you shape the future of regulatory reporting."
+            />
+            <ServiceCard
+              title="Cost Reduction Assessment"
+              index={0}
+              description="We help you uncover and quantify the substantial cost savings that BIRD and IReF can unlock for your organization."
+            />
+            <ServiceCard
+              title="Transformation Roadmap"
+              index={1}
+              description="Working together, we chart a realistic path toward a future-proof, cost-effective, and modern regulatory reporting platform."
+            />
           </div>
         </div>
       </section>
@@ -49,112 +79,76 @@ export function Landing({ posts = [] }: { posts: Post[] }) {
         </div>
       </section>
 
-      <section id="services" className="pt-20 bg-(--color-7)">
-        <h2 className="text-3xl font-semibold text-center text-(--color-1)">
-          <span className="text-(--color-4)">BAX Consulting</span> Services
-        </h2>
-        <div className="mx-auto max-w-7xl px-6 pt-8 pb-16">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <ServiceCard
-              title="Cost Reduction Assessment"
-              index={0}
-              description="A cost reduction assessment is a systematic evaluation of a business's expenses to identify inefficiencies, waste, and areas for optimization, aiming to lower per-unit costs and improve overall profitability without sacrificing quality. It involves analyzing data to pinpoint opportunities for savings in procurement, operations, and overhead, then implementing and monitoring a plan to achieve sustainable, long-term cost reduction."
-            />
-            <ServiceCard
-              title="Transformation Roadmap"
-              index={1}
-              description="A transformation roadmap is a strategic, step-by-step plan that guides an organization through a significant change by outlining goals, initiatives, timelines, and required resources to move from its current state to a desired future state. It serves as a blueprint for achieving business objectives by integrating new technologies and processes, ensuring that efforts are aligned, measurable, and effectively managed."
-            />
-            <ServiceCard
-              title="BIRD Advisory"
-              index={2}
-              description="The Banks' Integrated Reporting Dictionary (BIRD) is a voluntary, collaborative initiative led by the European Central Bank (ECB) that provides banks with a standardized data model and transformation rules to simplify regulatory reporting and reduce the reporting burden."
-            />
-            <ServiceCard
-              title="IReF Advisory"
-              index={3}
-              description="The Integrated Reporting Framework (IRF) provides organizations with a structured approach to preparing integrated reports that go beyond traditional financial reporting. The IRF identifies information to be included in an integrated report for use in assessing an organization's ability to create value."
-            />
-          </div>
-        </div>
-      </section>
-
       <ContactUs />
 
-      <section id="insights" className="pt-20 bg-(--color-7)">
-        <h2 className="text-3xl font-semibold text-center text-(--color-1)">
-          <span className="text-(--color-4)">BAX Consulting</span> Insights
-        </h2>
-        <div className="mx-auto max-w-7xl px-6 pb-30 py-12 grid gap-10 items-center">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {posts.map((post, postIndex) => (
-              <article
-                key={postIndex}
-                className="rounded-lg border hover:border-(--color-6) overflow-hidden hover:shadow-[0_0_20px_color-mix(in_srgb,var(--color-1)_10%,transparent)]"
-              >
-                <Image
-                  width={310}
-                  height={176}
-                  src="/article.png"
-                  alt=""
-                  className="w-full aspect-[3/2] object-cover bg-muted"
-                />
-                <div className="p-4 space-y-2">
-                  <div className="text-xs text-(--color-2)">{post.publishedFormatted}</div>
-                  <h3 className="font-semibold text-(--color-1)">{post.title}</h3>
-                  <p className="text-sm text-(--color-1) line-clamp-4">{post.description}</p>
-                  <Link
-                    href={post.slug ? `/insights/${post.slug}` : "/"}
-                    className="text-sm text-(--color-4) underline underline-offset-4 font-semibold"
-                  >
-                    Read more
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/*<section id="insights" className="pt-20 bg-(--color-7)">*/}
+      {/*  <h2 className="text-3xl font-semibold text-center text-(--color-1)">*/}
+      {/*    <span className="text-(--color-4)">BAX Consulting</span> Insights*/}
+      {/*  </h2>*/}
+      {/*  <div className="mx-auto max-w-7xl px-6 pb-30 py-12 grid gap-10 items-center">*/}
+      {/*    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">*/}
+      {/*      {posts.map((post, postIndex) => (*/}
+      {/*        <article*/}
+      {/*          key={postIndex}*/}
+      {/*          className="rounded-lg border hover:border-(--color-6) overflow-hidden hover:shadow-[0_0_20px_color-mix(in_srgb,var(--color-1)_10%,transparent)]"*/}
+      {/*        >*/}
+      {/*          <Image*/}
+      {/*            width={310}*/}
+      {/*            height={176}*/}
+      {/*            src="/article.png"*/}
+      {/*            alt=""*/}
+      {/*            className="w-full aspect-[3/2] object-cover bg-muted"*/}
+      {/*          />*/}
+      {/*          <div className="p-4 space-y-2">*/}
+      {/*            <div className="text-xs text-(--color-2)">{post.publishedFormatted}</div>*/}
+      {/*            <h3 className="font-semibold text-(--color-1)">{post.title}</h3>*/}
+      {/*            <p className="text-sm text-(--color-1) line-clamp-4">{post.description}</p>*/}
+      {/*            <Link*/}
+      {/*              href={post.slug ? `/insights/${post.slug}` : "/"}*/}
+      {/*              className="text-sm text-(--color-4) underline underline-offset-4 font-semibold"*/}
+      {/*            >*/}
+      {/*              Read more*/}
+      {/*            </Link>*/}
+      {/*          </div>*/}
+      {/*        </article>*/}
+      {/*      ))}*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*</section>*/}
 
-      <section className="bg-(--color-7)">
+      <section className="bg-(--color-7) pt-20">
         <h2 className="text-3xl font-semibold text-center text-(--color-1)">
-          <span className="text-(--color-4)">BAX Consulting</span> SEO text
+          <span className="text-(--color-4)">BIRD and IReF</span> reporting advisory
         </h2>
 
         <div className="mx-auto max-w-5xl px-6 py-14 space-y-6">
           <p className="text-(--color-1)">
-            We provide comprehensive software and consulting solutions tailored specifically for the banking sector. Our
-            expertise enables financial institutions to enhance their operational efficiency, improve customer
-            experiences, and navigate the complexities of regulatory compliance. By leveraging advanced technology and
-            industry insights, we empower banks to innovate and stay competitive in a rapidly evolving market.
-          </p>
-          <p className="text-(--color-1)">
-            Software and consulting solutions tailored for BIRD and IReF are designed to enhance operational efficiency
-            and drive innovation. By focusing on customized solutions, the aim is to facilitate growth and improve overall
-            performance in a competitive landscape.
+            We specialize in BIRD and IReF consulting, offering expert guidance and hands-on implementation support.
+            With deep experience in regulatory reporting frameworks like CoREP, FinRep, and AnaCredit, we help financial institutions streamline compliance.
+            Our expertise in data modeling and BIRD/IReF transformation rules ensures accurate, efficient, and fully compliant reporting solutions.
           </p>
 
-          <details className="group">
-            <summary className="inline-flex items-center gap-2 text-sm text-(--color-4) font-semibold underline underline-offset-4 cursor-pointer select-none">
-              <span className="group-open:hidden">Read more</span>
-              <span className="hidden group-open:inline">Read less</span>
-            </summary>
+          {/*<details className="group">*/}
+          {/*  <summary className="inline-flex items-center gap-2 text-sm text-(--color-4) font-semibold underline underline-offset-4 cursor-pointer select-none">*/}
+          {/*    <span className="group-open:hidden">Read more</span>*/}
+          {/*    <span className="hidden group-open:inline">Read less</span>*/}
+          {/*  </summary>*/}
 
-            <div className="mt-4 space-y-6">
-              <p className="text-(--color-1)">
-                [SEO paragraph #3] Add more relevant, keyword-rich copy about your services, industry expertise, and
-                differentiators. Keep it human and readable.
-              </p>
-              <p className="text-(--color-1)">
-                [SEO paragraph #4] Mention supported regulatory frameworks (e.g., BIRD, IReF), typical engagement models,
-                and measurable outcomes you deliver for clients.
-              </p>
-              <p className="text-(--color-1)">
-                [SEO paragraph #5] Include trust signals: security posture, compliance approach, data handling, regions served,
-                and integration capabilities with core systems.
-              </p>
-            </div>
-          </details>
+          {/*  <div className="mt-4 space-y-6">*/}
+          {/*    <p className="text-(--color-1)">*/}
+          {/*      [SEO paragraph #3] Add more relevant, keyword-rich copy about your services, industry expertise, and*/}
+          {/*      differentiators. Keep it human and readable.*/}
+          {/*    </p>*/}
+          {/*    <p className="text-(--color-1)">*/}
+          {/*      [SEO paragraph #4] Mention supported regulatory frameworks (e.g., BIRD, IReF), typical engagement models,*/}
+          {/*      and measurable outcomes you deliver for clients.*/}
+          {/*    </p>*/}
+          {/*    <p className="text-(--color-1)">*/}
+          {/*      [SEO paragraph #5] Include trust signals: security posture, compliance approach, data handling, regions served,*/}
+          {/*      and integration capabilities with core systems.*/}
+          {/*    </p>*/}
+          {/*  </div>*/}
+          {/*</details>*/}
         </div>
       </section>
     </>
@@ -174,7 +168,7 @@ function ServiceCard({ title, description, index }: { title: string; description
         />
       </div>
       <h3 className="text-(--color-1) text-2xl font-semibold">{title}</h3>
-      <p className="mt-2 text-sm text-(--color-1)">{description}</p>
+      <p className="mt-2 text-lg text-(--color-1)">{description}</p>
     </div>
   );
 }
