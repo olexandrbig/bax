@@ -22,7 +22,7 @@ function csp() {
     ["img-src", ["'self'", "data:", "https:"]],
     ["font-src", ["'self'", "data:", "https://fonts.mailerlite.com"]],
     ["connect-src", connectSrc],
-    ["frame-src", ["'self'", "https://*.mailerlite.com", "https://www.google.com/"]],
+    ["frame-src", ["'self'", "https://*.powerbi.com", "https://*.mailerlite.com", "https://www.google.com/"]],
     ["frame-ancestors", ["'self'", "https://*.mailerlite.com", "https://www.google.com/"]],
     ["form-action", ["'self'", "https://*.mailerlite.com"]]
   ]);
