@@ -97,7 +97,9 @@ export default function Analytics() {
                 <div className="flex items-start justify-between gap-4">
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
-                      <div className="font-semibold truncate">{r.name}</div>
+                      <a href="/app/report">
+                        <div className="font-semibold truncate">{r.name}</div>
+                      </a>
                     </div>
                     <div className="text-xs text-muted-foreground mt-1">
                       Last Updated: {r.lastUpdated ?? "—"}
@@ -138,7 +140,9 @@ export default function Analytics() {
             <li key={r.name} className="rounded-md border p-4">
               <div className="flex items-start justify-between gap-4">
                 <div className="min-w-0">
-                  <div className="font-semibold truncate">{r.name}</div>
+                  <a href="/app/report/">
+                    <div className="font-semibold truncate">{r.name}</div>
+                  </a>
                   <div className="text-xs text-muted-foreground mt-1">
                     Last Updated: {r.lastUpdated ?? "—"}
                   </div>
