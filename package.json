@@ -49,5 +49,10 @@
     "postcss": "8.5.6",
     "tailwindcss": "4.1.13",
     "typescript": "5.9.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "js-yaml@>=4.0.0 <4.1.1": ">=4.1.1"
+    }
   }
 }
