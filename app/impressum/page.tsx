@@ -7,8 +7,9 @@ const SITE_URL = process.env.BASE_URL || "https://bax.solutions";
 const PAGE_PATH = "/impressum";
 const NAME = "Impressum";
 const BRAND = "BAX Consulting";
-const DESCRIPTION = "TODO: One–sentence summary of your Terms of Service page for search and link previews.";
+const DESCRIPTION = "TODO: One–sentence summary of your Impressum page for search and link previews.";
 const KEYWORDS = [
+  "impressum",
   "terms",
   "terms of service",
   "tos",

@@ -2,7 +2,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import { extractFrontmatter, parseFrontmatter, slugify, formatDate } from "@/lib/utils"
 
-export type PostSummary = {
+export type DocumentationSummary = {
   slug: string;
   title: string;
   description?: string;
@@ -10,13 +10,13 @@ export type PostSummary = {
   publishedFormatted?: string;
 };
 
-export type Post = PostSummary & {
+export type Documentation = DocumentationSummary & {
   content: string;
 };
 
-const POSTS_DIR = path.join(process.cwd(), "content", "insights");
+const POSTS_DIR = path.join(process.cwd(), "content", "documentation");
 
-export async function getPosts(): Promise<PostSummary[]> {
+export async function getDocumentations(): Promise<DocumentationSummary[]> {
   const entries = await fs.readdir(POSTS_DIR);
   const mdFiles = entries.filter((f) => f.endsWith(".md"));
   const posts = await Promise.all(
@@ -34,7 +34,7 @@ export async function getPosts(): Promise<PostSummary[]> {
         description: (fm.description as string) ?? undefined,
         published: (fm.publishedDate as string) ?? undefined,
         publishedFormatted: formatDate(fm.publishedDate as string),
-      } satisfies PostSummary;
+      } satisfies DocumentationSummary;
     })
   );
 
@@ -48,11 +48,11 @@ export async function getPosts(): Promise<PostSummary[]> {
 }
 
 export async function getAllSlugs() {
-  const posts = await getPosts();
+  const posts = await getDocumentations();
   return posts.map((p) => p.slug);
 }
 
-export async function getPostBySlug(slug: string): Promise<Post | null> {
+export async function getDocumentationBySlug(slug: string): Promise<Documentation | null> {
   const entries = await fs.readdir(POSTS_DIR);
   for (const filename of entries) {
     if (!filename.endsWith(".md")) continue;

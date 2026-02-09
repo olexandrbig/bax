@@ -1,19 +1,17 @@
-import {getPosts} from '@/lib/posts';
-import { Insights } from "@/components/site/insights";
+import {getDocumentations} from '@/lib/documentation';
 import {Navbar} from "@/components/site/navbar";
 import {Footer} from "@/components/site/footer";
 import type {Metadata} from "next";
 import Script from "next/script";
+import {Documentation} from "@/components/site/documentation";
 
 const SITE_URL = process.env.BASE_URL || "https://bax.solutions";
-const PAGE_PATH = "/insights";
-const NAME = "Insights";
+const PAGE_PATH = "/documentation";
+const NAME = "Documentation";
 const BRAND = "BAX Consulting";
-const DESCRIPTION = "TODO: One–sentence summary of your Insights page for search and link previews.";
+const DESCRIPTION = "TODO: One–sentence summary of your Documentation page for search and link previews.";
 const KEYWORDS = [
-  "insights",
-  "updates",
-  "news",
+  "documentation",
   BRAND,
 ]
 const OG_IMAGE = "/og/icon.png";
@@ -95,12 +93,12 @@ export default async function InsightsPage() {
       ],
     },
   };
-  const posts = await getPosts();
+  const items = await getDocumentations();
 
   return (
     <main className="min-h-dvh flex flex-col">
       <Navbar />
-      <Insights posts={posts}></Insights>
+      <Documentation items={items}></Documentation>
       <Footer />
       <Script
         id="ld-json-insights"
