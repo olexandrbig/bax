@@ -3,6 +3,7 @@
 import React from "react";
 import { ThemeProvider } from "@/components/theme-provider"
 import { Montserrat } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -30,6 +31,7 @@ export default function RootLayout({
       >
         {children}
       </ThemeProvider>
+      <Analytics />
       </body>
     </html>
   );
