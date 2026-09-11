@@ -7,7 +7,9 @@ const SITE_URL = process.env.BASE_URL || "https://bax.solutions";
 const PAGE_PATH = "/terms";
 const NAME = "Terms of Service";
 const BRAND = "BAX Consulting";
-const DESCRIPTION = "At BAX, we respect your privacy and are committed to protecting your personal information";
+const DESCRIPTION = "At BAX Consulting, we respect your privacy and are committed to protecting your personal information.";
+const EFFECTIVE_DATE = "11 September 2026";
+const CONTACT_EMAIL = "contact@bax.solutions";
 const KEYWORDS = [
   "terms",
   "terms of service",
@@ -101,55 +103,57 @@ export default function TermsPage() {
     <main className="min-h-dvh">
       <Navbar />
       <section className="pt-20 min-h-[calc(100vh-245px)] bg-(--color-7)">
-        <h1 className="text-3xl font-semibold text-center text-(--color-1)">
-          <span className="text-(--color-4)">BAX Consulting</span> Privacy &amp; Terms
+        <h1 className="px-6 text-3xl font-semibold text-center text-(--color-1)">
+          <span className="text-(--color-4)">BAX Consulting</span> Privacy Policy &amp; Terms of Service
         </h1>
 
         <div className="mx-auto max-w-5xl px-6 py-14 space-y-8 text-(--color-1)">
 
+          <p><strong>Effective Date:</strong> {EFFECTIVE_DATE}</p>
+
           <div className="space-y-6">
             <h2 className="text-2xl font-semibold">Privacy Policy</h2>
 
-            <p><strong>Effective Date: 1.7.2025</strong></p>
-
-            <p><strong>Your Privacy Matters</strong></p>
+            <h3 className="text-xl font-semibold">Your Privacy Matters</h3>
             <p>
-              At BAX, we respect your privacy and are committed to protecting your personal information. This Privacy Policy
-              explains how we collect, use, and safeguard your data.
+              At BAX Consulting, we respect your privacy and are committed to protecting your personal information. This
+              Privacy Policy explains how we collect, use, and safeguard your data.
             </p>
 
             <h3 className="text-xl font-semibold">Information We Collect</h3>
 
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong>Personal Information:</strong> Name, email address, phone number, billing information, etc., that you
-                provide when signing up or making a purchase.
+                <strong>Information you provide:</strong> name, company name, business email address, phone number, and any
+                details you share with us when contacting us or requesting a consultation.
               </li>
               <li>
-                <strong>Non-Personal Information:</strong> Browser type, device information, IP address, and usage data
-                collected automatically to improve our services.
+                <strong>Information collected automatically:</strong> browser type, device information, IP address, and usage
+                data, collected to help us understand and improve how our website is used.
               </li>
             </ul>
 
             <h3 className="text-xl font-semibold">How We Use Your Information</h3>
 
             <ul className="list-disc pl-6 space-y-2">
-              <li>To provide and improve our services.</li>
-              <li>To communicate with you regarding updates, offers, or support.</li>
-              <li>To personalize your experience on our website.</li>
-              <li>To comply with legal obligations.</li>
+              <li>To respond to your inquiries and provide consulting services.</li>
+              <li>To communicate with you about our services, proposals, or ongoing engagements.</li>
+              <li>To improve our website and services.</li>
+              <li>To comply with legal and regulatory obligations.</li>
             </ul>
 
             <h3 className="text-xl font-semibold">Sharing Your Information</h3>
-            <p>We do not sell your personal information.</p>
+            <p>
+              We do not sell your personal information. We may share it with trusted service providers who support our
+              operations (for example, email or hosting providers), and only under confidentiality obligations. We do not
+              share your data with third parties for their own marketing purposes.
+            </p>
 
             <h3 className="text-xl font-semibold">Cookies &amp; Tracking</h3>
             <p>
-              We use cookies and similar technologies to enhance your experience. You can manage your preferences in your
-              browser settings.
+              We use cookies and similar technologies to operate and improve this website. You can manage your cookie
+              preferences at any time in your browser settings.
             </p>
-
-            <hr className="border-(--color-3)/30" />
 
             <h3 className="text-xl font-semibold">GDPR Compliance (for EU Users)</h3>
 
@@ -166,7 +170,10 @@ export default function TermsPage() {
               <li><strong>Data Portability:</strong> You can request your personal data in a structured, commonly used format.</li>
             </ul>
 
-            <p>To exercise your GDPR rights, please contact us at <a href="mailto:gdpr@bax.com" target="_blank">gdpr@bax.com</a></p>
+            <p>
+              To exercise your GDPR rights, please contact us at{" "}
+              <a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold text-(--color-4) underline underline-offset-4">{CONTACT_EMAIL}</a>.
+            </p>
 
             <hr className="border-(--color-3)/30" />
           </div>
@@ -174,46 +181,48 @@ export default function TermsPage() {
           <div className="space-y-6">
             <h2 className="text-2xl font-semibold">Terms of Service</h2>
 
-            <p><strong>Acceptance of Terms</strong></p>
+            <h3 className="text-xl font-semibold">Acceptance of Terms</h3>
             <p>
-              By accessing or using <a href="mailto:www.bax.com" target="_blank">www.bax.com</a>, you agree to be bound by these Terms of Service. If you do not agree, please
-              do not use our site.
+              By accessing or using this website, you agree to be bound by these Terms of Service. If you do not agree,
+              please do not use the site.
             </p>
 
-            <p><strong>Use of Our Services</strong></p>
-            <p>You agree to use our website in compliance with all applicable laws and regulations. You may not:</p>
+            <h3 className="text-xl font-semibold">Use of Our Website</h3>
+            <p>You agree to use this website in compliance with all applicable laws and regulations. You may not:</p>
 
             <ul className="list-disc pl-6 space-y-2">
-              <li>Violate intellectual property rights.</li>
-              <li>Interfere with website security or functionality.</li>
-              <li>Use our services for unlawful purposes.</li>
+              <li>Violate our or any third party’s intellectual property rights.</li>
+              <li>Interfere with the website’s security or functionality.</li>
+              <li>Use the website for unlawful purposes.</li>
             </ul>
 
-            <p><strong>Account Responsibility</strong></p>
+            <h3 className="text-xl font-semibold">Consulting Engagements</h3>
             <p>
-              If you create an account, you are responsible for maintaining the confidentiality of your login information and
-              for all activities under your account.
+              Any consulting or implementation services provided by BAX Consulting are governed by a separate, signed
+              agreement between BAX Consulting and the client. These Terms of Service apply only to your use of this website
+              and do not constitute or replace any such agreement.
             </p>
 
-            <p><strong>Limitation of Liability</strong></p>
+            <h3 className="text-xl font-semibold">Limitation of Liability</h3>
             <p>
-              BAX is not liable for any direct, indirect, or consequential damages resulting from your use of our website or
-              services.
+              BAX Consulting is not liable for any direct, indirect, or consequential damages resulting from your use of this
+              website.
             </p>
 
-            <p><strong>Changes to Terms</strong></p>
+            <h3 className="text-xl font-semibold">Changes to This Page</h3>
             <p>
-              We may update these Terms and Privacy Policy from time to time. Updates will be posted on this page with a
+              We may update these Terms and this Privacy Policy from time to time. Updates will be posted on this page with a
               revised effective date.
             </p>
 
-            <p><strong>Contact Us</strong></p>
-            <p>For questions about these Terms or Privacy Policy, please contact:</p>
+            <h3 className="text-xl font-semibold">Contact Us</h3>
+            <p>For questions about these Terms or this Privacy Policy, please contact:</p>
 
-            <p>BAX Consulting</p>
-            <p><a href="mailto:contact@bax.com" target="_blank">contact@bax.com</a></p>
-
-            <hr className="border-(--color-3)/30" />
+            <p>
+              <strong>BAX Consulting</strong>
+              <br />
+              <a href={`mailto:${CONTACT_EMAIL}`} className="text-(--color-4) underline underline-offset-4">{CONTACT_EMAIL}</a>
+            </p>
           </div>
         </div>
       </section>

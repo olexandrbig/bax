@@ -163,7 +163,7 @@ function ServiceCard({ title, description, index }: { title: string; description
           width={80}
           height={80}
           src={`/service-${index + 1}.png`}
-          alt=""
+          alt={`${title} icon`}
           className="w-20 mb-4 float-right inline-block"
         />
       </div>

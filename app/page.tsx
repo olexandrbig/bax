@@ -9,7 +9,7 @@ const SITE_URL = process.env.BASE_URL || "https://bax.solutions";
 const PAGE_PATH = "/";
 const NAME = "Home";
 const BRAND = "BAX Consulting";
-const DESCRIPTION = "TODO: One–sentence summary of your Terms of Service page for search and link previews.";
+const DESCRIPTION = "BAX Consulting delivers expert BIRD and IReF advisory and implementation services, helping banks modernize regulatory reporting with the BAX Platform.";
 const KEYWORDS = [
   BRAND,
 ]

@@ -19,7 +19,7 @@ export function Footer() {
             </nav>
           </div>
           <div className="flex items-center gap-6">
-            <a href="mailto:info@bax.com" className="hidden sm:inline text-sm text-(--color-7)">info@bax.com</a>
+            <a href="mailto:contact@bax.solutions" className="hidden sm:inline text-sm text-(--color-7)">contact@bax.solutions</a>
             <a href="tel:+359000000000" className="hidden sm:inline text-sm text-(--color-7)">+359 000 000 000</a>
             <Link
               href="/#contact"
@@ -32,7 +32,7 @@ export function Footer() {
       </header>
       <div className="mx-auto max-w-7xl px-6 text-sm text-(--color-6)">
         © {new Date().getFullYear()} BAX Consulting
-        <div className="text-sm">Grosse Gallussstrasse 16-18, 60312 Frankfurt am Main, Germany</div>
+        <div className="text-sm">Große Gallusstraße 16-18, 60312 Frankfurt am Main, Germany</div>
         <div className="text-sm">All rights reserved. Secured by SSL.</div>
       </div>
     </footer>
