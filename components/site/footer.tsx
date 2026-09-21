@@ -20,7 +20,7 @@ export function Footer() {
           </div>
           <div className="flex items-center gap-6">
             <a href="mailto:contact@bax.solutions" className="hidden sm:inline text-sm text-(--color-7)">contact@bax.solutions</a>
-            <a href="tel:+359000000000" className="hidden sm:inline text-sm text-(--color-7)">+359 000 000 000</a>
+            <a href="tel:+49408668770" className="hidden sm:inline text-sm text-(--color-7)">+49 40 8668 770</a>
             <Link
               href="/#contact"
               className="rounded-sm px-6 py-1 text-base font-semibold bg-(--color-4) text-(--color-7) hover:opacity-90"
