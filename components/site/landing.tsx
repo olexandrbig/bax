@@ -64,7 +64,7 @@ export function Landing({ posts = [] }: { posts: Post[] }) {
         <h2 className="text-3xl font-semibold text-center text-(--color-4)">BAX Platform</h2>
         <div className="mx-auto max-w-7xl px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
           <div className="order-1">
-            <Image width={644} height={366} src="/graph.png" alt="BAX Platform screenshot" className="w-full" />
+            <Image width={750} height={442} src="/bax_platform_diagram.svg" alt="BAX Platform diagram" className="w-full" />
           </div>
           <div className="order-2 space-y-5">
             <p className="text-(--color-1) text-2xl">
