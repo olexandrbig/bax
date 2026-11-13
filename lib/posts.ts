@@ -11,6 +11,7 @@ export type PostSummary = {
 };
 
 export type Post = PostSummary & {
+  author?: string;
   content: string;
 };
 
@@ -72,6 +73,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
         description: (fm.description as string) ?? undefined,
         published: (fm.publishedDate as string) ?? undefined,
         publishedFormatted: formatDate(fm.publishedDate as string),
+        author: (fm.author as string) ?? undefined,
         content: body.trim(),
       };
     }

@@ -47,13 +47,43 @@ export default async function PostPage({
   }
 
   const html = marked.parse(post.content) as string;
+  // Two-tone title like the Terms page: the part before the first colon in brand colour.
+  const colon = post.title.indexOf(":");
+  const titleLead = colon > 0 ? post.title.slice(0, colon) : "";
+  const titleRest = colon > 0 ? post.title.slice(colon + 1) : "";
 
   return (
     <main className="min-h-dvh flex flex-col ">
       <Navbar />
-      <section className="min-h-[calc(100vh-245px)] bg-(--color-7) px-6 py-16 ">
-        <div className="mx-auto max-w-3xl prose">
-          <RichArticle html={html} />
+      <section className="pt-20 min-h-[calc(100vh-245px)] bg-(--color-7)">
+        <h1 className="mx-auto max-w-5xl px-6 text-3xl font-semibold text-center text-(--color-1)">
+          {titleLead ? (
+            <>
+              <span className="text-(--color-4)">{titleLead}:</span>
+              {titleRest}
+            </>
+          ) : (
+            post.title
+          )}
+        </h1>
+
+        <div className="mx-auto max-w-5xl px-6 py-14 space-y-8 text-(--color-1)">
+          {(post.publishedFormatted || post.author) && (
+            <p>
+              {post.publishedFormatted && (
+                <>
+                  <strong>Published:</strong> {post.publishedFormatted}
+                </>
+              )}
+              {post.publishedFormatted && post.author && " · "}
+              {post.author && (
+                <>
+                  <strong>Author:</strong> {post.author}
+                </>
+              )}
+            </p>
+          )}
+          <RichArticle html={html} className="rt-insight" />
         </div>
       </section>
       <Footer />

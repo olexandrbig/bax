@@ -1,6 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ContactUs } from "./contact-us";
+import { Services } from "./services";
+import { LatestInsights, type InsightCard } from "./latest-insights";
+import latestInsightsJson from "@/data/latest-insights.json";
+
+const latestInsights = latestInsightsJson as InsightCard[];
 
 export type Post = {
   slug: string;
@@ -13,9 +18,10 @@ export type Post = {
 export function Landing({ posts = [] }: { posts: Post[] }) {
   return (
     <>
-      <section className="flex-1 flex min-h-[calc(100vh+10px)] justify-center items-center bg-[url(/hero.png)] bg-black/20 bg-blend-multiply bg-cover mt-[-70px]">
-        <div>
-          <div className="w-1/1 space-y-6 text-center">
+      <section className="relative flex flex-col min-h-[calc(100vh+10px)] bg-[url(/hero.png)] bg-cover bg-center mt-[-70px]">
+        <div className="absolute inset-0 bg-gradient-to-b from-(--color-3)/30 via-(--color-3)/40 via-55% to-(--color-3)" />
+        <div className="relative flex flex-1 min-h-[60vh] justify-center items-center pt-[70px]">
+          <div className="w-1/1 space-y-6 text-center px-6">
             <h1 className="text-4xl/tight sm:text-5xl/tight font-semibold text-(--color-7)">BIRD & IReF</h1>
             <p className="text-(--color-7) text-2xl/tight mb-12">
               Consulting and Implementation services
@@ -28,37 +34,10 @@ export function Landing({ posts = [] }: { posts: Post[] }) {
             </Link>
           </div>
         </div>
+        <LatestInsights items={latestInsights} />
       </section>
 
-      <section id="services" className="pt-20 bg-(--color-7)">
-        <h2 className="text-3xl font-semibold text-center text-(--color-1)">
-          <span className="text-(--color-4)">BAX Consulting</span> Services
-        </h2>
-        <div className="mx-auto max-w-7xl px-6 pt-8 pb-16">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <ServiceCard
-                title="BIRD Advisory"
-                index={2}
-                description="As BIRD experts, we help you implement all aspects of BIRD from data engineering, layer creation to transformation rules and model consultation."
-            />
-            <ServiceCard
-                title="IReF Advisory"
-                index={3}
-                description="We constantly monitor and analyze the latest updates to the IReF standard and help you shape the future of regulatory reporting."
-            />
-            <ServiceCard
-              title="Cost Reduction Assessment"
-              index={0}
-              description="We help you uncover and quantify the substantial cost savings that BIRD and IReF can unlock for your organization."
-            />
-            <ServiceCard
-              title="Transformation Roadmap"
-              index={1}
-              description="Working together, we chart a realistic path toward a future-proof, cost-effective, and modern regulatory reporting platform."
-            />
-          </div>
-        </div>
-      </section>
+      <Services />
 
       <section id="solutions" className="bg-(--color-8) pt-20">
         <h2 className="text-3xl font-semibold text-center text-(--color-4)">BAX Platform</h2>
@@ -152,23 +131,5 @@ export function Landing({ posts = [] }: { posts: Post[] }) {
         </div>
       </section>
     </>
-  );
-}
-
-function ServiceCard({ title, description, index }: { title: string; description: string; index: number }) {
-  return (
-    <div className="rounded-sm border hover:border-(--color-6) p-5 flex flex-col hover:shadow-[0_0_20px_color-mix(in_srgb,var(--color-1)_10%,transparent)]">
-      <div className="text-right">
-        <Image
-          width={80}
-          height={80}
-          src={`/service-${index + 1}.png`}
-          alt={`${title} icon`}
-          className="w-20 mb-4 float-right inline-block"
-        />
-      </div>
-      <h3 className="text-(--color-1) text-2xl font-semibold">{title}</h3>
-      <p className="mt-2 text-lg text-(--color-1)">{description}</p>
-    </div>
   );
 }
