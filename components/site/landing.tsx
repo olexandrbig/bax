@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ContactUs } from "./contact-us";
-import { Services } from "./services";
 import { LatestInsights, type InsightCard } from "./latest-insights";
 import latestInsightsJson from "@/data/latest-insights.json";
 
@@ -37,7 +36,35 @@ export function Landing({ posts = [] }: { posts: Post[] }) {
         <LatestInsights items={latestInsights} />
       </section>
 
-      <Services />
+      <section id="services" className="pt-20 bg-(--color-7)">
+        <h2 className="text-3xl font-semibold text-center text-(--color-1)">
+          <span className="text-(--color-4)">BAX Consulting</span> Services
+        </h2>
+        <div className="mx-auto max-w-7xl px-6 pt-8 pb-16">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <ServiceCard
+                title="BIRD Advisory"
+                index={2}
+                description="As BIRD experts, we help you implement all aspects of BIRD from data engineering, layer creation to transformation rules and model consultation."
+            />
+            <ServiceCard
+                title="IReF Advisory"
+                index={3}
+                description="We constantly monitor and analyze the latest updates to the IReF standard and help you shape the future of regulatory reporting."
+            />
+            <ServiceCard
+              title="Cost Reduction Assessment"
+              index={0}
+              description="We help you uncover and quantify the substantial cost savings that BIRD and IReF can unlock for your organization."
+            />
+            <ServiceCard
+              title="Transformation Roadmap"
+              index={1}
+              description="Working together, we chart a realistic path toward a future-proof, cost-effective, and modern regulatory reporting platform."
+            />
+          </div>
+        </div>
+      </section>
 
       <section id="solutions" className="bg-(--color-8) pt-20">
         <h2 className="text-3xl font-semibold text-center text-(--color-4)">BAX Platform</h2>
@@ -131,5 +158,23 @@ export function Landing({ posts = [] }: { posts: Post[] }) {
         </div>
       </section>
     </>
+  );
+}
+
+function ServiceCard({ title, description, index }: { title: string; description: string; index: number }) {
+  return (
+    <div className="rounded-sm border hover:border-(--color-6) p-5 flex flex-col hover:shadow-[0_0_20px_color-mix(in_srgb,var(--color-1)_10%,transparent)]">
+      <div className="text-right">
+        <Image
+          width={80}
+          height={80}
+          src={`/service-${index + 1}.png`}
+          alt={`${title} icon`}
+          className="w-20 mb-4 float-right inline-block"
+        />
+      </div>
+      <h3 className="text-(--color-1) text-2xl font-semibold">{title}</h3>
+      <p className="mt-2 text-lg text-(--color-1)">{description}</p>
+    </div>
   );
 }
