@@ -4,6 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { ChevronDown } from "lucide-react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import type { InsightCard } from "./latest-insights";
+import insightsJson from "@/data/latest-insights.json";
+
+const insights = insightsJson as InsightCard[];
 
 export function Navbar() {
   const pathname = usePathname();
@@ -35,7 +41,24 @@ export function Navbar() {
           <nav className="hidden md:flex items-center gap-6">
             <Link href="/#services" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Services</Link>
             <Link href="/#solutions" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Solutions</Link>
-            {/*<Link href="/insights" className="rounded-md px-3 py-2 text-sm text-(--color-7)">Insights</Link>*/}
+            <DropdownMenu modal={false}>
+              <DropdownMenuTrigger className="flex items-center gap-1 rounded-md px-3 py-2 text-sm text-(--color-7) outline-none focus-visible:ring-2 focus-visible:ring-(--color-5) data-[state=open]:[&>svg]:rotate-180">
+                Insights
+                <ChevronDown className="size-4 transition-transform" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" sideOffset={8} className="w-80 rounded-sm border-0 bg-(--color-7) p-2 shadow-lg">
+                {insights.filter((item) => item.href).map((item) => (
+                  <DropdownMenuItem key={item.href} asChild className="cursor-pointer rounded-sm p-3 focus:bg-(--color-8)">
+                    <Link href={item.href as never} className="flex flex-col items-start gap-1">
+                      <span className="text-xs font-semibold text-(--color-4)">
+                        {item.type} · {item.date}
+                      </span>
+                      <span className="text-sm font-semibold text-(--color-1)">{item.title}</span>
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </nav>
         </div>
         <div className="flex items-center gap-6">
