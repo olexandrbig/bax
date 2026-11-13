@@ -5,9 +5,6 @@ description: Banks that build AnaCredit on BIRD today put their data into the sh
 publishedDate: 2026-11-13T09:00:00.000Z
 ---
 
-# AnaCredit today, IReF tomorrow: Build it once
-
-*Nov 13, 2026*
 
 European statistical reporting is moving to one integrated, granular framework, and AnaCredit is part of it. Banks that build AnaCredit on BIRD today are not only filing a report. They are putting their data into the shared European structure that the next generation of reporting is designed around.
 

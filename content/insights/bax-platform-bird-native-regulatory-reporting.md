@@ -2,12 +2,10 @@
 title: The BAX Platform: BIRD-Native Regulatory Reporting for the IReF Era
 slug: bax-platform-bird-native-regulatory-reporting
 description: The BAX Platform is a BIRD-native regulatory reporting platform on Snowflake that produces IReF, FinRep, AnaCredit, statistical and local reports from one data foundation.
+author: Frank
 publishedDate: 2026-10-23T09:00:00.000Z
 ---
 
-# The BAX Platform: BIRD-Native Regulatory Reporting for the IReF Era
-
-*Oct 23, 2026 · Frank*
 
 ## Why regulatory reporting has to change now
 
