@@ -105,8 +105,12 @@ export function Services() {
             <div className="space-y-4">
               <Image width={80} height={80} src={service.icon} alt="" className="w-16" />
               <h3 className="text-2xl font-semibold text-(--color-1)">{service.title}</h3>
-              <p className="text-(--color-1)">{service.intro}</p>
+              {service.groups.length > 0 && <p className="text-(--color-1)">{service.intro}</p>}
             </div>
+
+            {service.groups.length === 0 && (
+              <p className="self-center text-lg text-(--color-1)">{service.intro}</p>
+            )}
 
             {service.groups.length > 0 && (
               <div className="space-y-8">
